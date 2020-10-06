@@ -1,0 +1,232 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="independent, game, indiegame, multimedia">
+	<meta name="description" content="A distributed collaborative multimedia design studio registered in Montreal, Canada.">
+	<title>Lalafa Design</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<script type="text/javascript">
+		var currentContent;
+		
+		/*function onload () {
+			document.getElementById("home").style.visibility = "visible";
+			document.getElementById("about").style.visibility = "hidden";
+			document.getElementById("games").style.visibility = "hidden";
+			document.getElementById("contact").style.visibility = "hidden";
+		}*/
+		function changeCurrentContent (id) {
+			//alert(document.getElementById(currentContent).style.visibility);
+			if (currentContent) {
+				document.getElementById(currentContent).style.display = "none";
+				var bt1 = document.getElementById(currentContent+"Bt");
+				bt1.style.width = "auto";
+				bt1.style.display = "inline-block";
+				bt1.style.textDecoration = "none";
+				bt1.style.fontWeight = "bold";
+				bt1.style.color = "rgba(255,255,255,1)";
+				bt1.style.padding = "0.25rem .8rem";
+			}
+			
+			currentContent = id;
+			document.getElementById(currentContent).style.display = "inline-block";
+			var bt2 = document.getElementById(currentContent+"Bt");
+			bt2.style.width = "100%";
+			bt2.style.color = "rgba(255,255,255,0)";
+		}
+		function onHover (id) {
+			if (currentContent != id) {
+				var bt1 = document.getElementById(id+"Bt");
+				bt1.style.width = "80%";
+				bt1.style.textAlign = "center";
+			}		
+		}
+		function onOut (id) {
+			if (currentContent != id) {
+				var bt1 = document.getElementById(id+"Bt");
+				bt1.style.width = "auto";
+			}	
+		}
+	</script>
+</head>
+
+<body>
+    <!-- 页头 -->
+    <header>
+        <!-- Logo -->
+        <div id="logo">
+        	<h1>
+	        	<span class="logo_letter_1">L</span>
+	        	<span class="logo_letter_2">A</span>
+	        	<span class="logo_letter_3">L</span>
+	        	<span class="logo_letter_4">A</span>
+	        	<span class="logo_letter_5">F</span>
+	        	<span class="logo_letter_6">A</span>
+	        </h1>
+        </div>
+        <!-- Slogan -->
+        <div id="slogan">
+	        <p class="yellow">Freedom beneath weirdness</p>
+	    </div>
+	</header>
+	<div class="container">
+		<!-- Main Menu -->
+		<div id="main_menu">
+			<nav>
+				<ul>
+					<li>
+						<a id="aboutBt" class="blue" href="#" onclick="changeCurrentContent('about')" onmouseover="onHover('about')" onmouseout="onOut('about')">About</a>
+					</li>
+					<li>
+						<a id="gamesBt" class="pink" href="#" onclick="changeCurrentContent('games')" onmouseover="onHover('games')" onmouseout="onOut('games')">Games</a>
+					</li>
+					<li>
+						<a id="booksBt" class="orange" href="#" onclick="changeCurrentContent('books')" onmouseover="onHover('books')" onmouseout="onOut('books')">Books</a>
+					</li>
+					<li>
+						<a id="galleryBt" class="green" href="#" onclick="changeCurrentContent('gallery')" onmouseover="onHover('gallery')" onmouseout="onOut('gallery')">Gallery</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+
+		<!-- About Us-->
+		<div id="about" class="container_right blue hidden">
+			<h2>Who are we?</h2>
+			<p>A distributed collaborative indie game studio registered in Montreal, Canada. Because we can't find customers, so far we have been doing independent games and self-expression design countent. We insist on using a design language that allows us to maintain our creative passion. Stay enthusiastic, stay awake, and think independently.</p>
+			<!-- Members -->
+			<nav class="members">
+				<ul>
+					<li>
+						<img src="./images/ray_icon.jpg">
+						<h3>Ray</h3>
+						<p>Artist</p>
+					</li>
+					<li>
+						<img src="./images/euglena_icon.jpg">
+						<h3>Euglena</h3>
+						<p>Designer</p>
+					</li>
+				</ul>
+			</nav>
+			<!-- SNS follow us -->
+			<div class="sns">
+				<h2>Contact & <span>F</span>ollow Us</h2>
+				<ul>
+					<li>
+						<a class="icon_twitter" href="https://twitter.com/lalafadesign" target="_blank">Twitter</a>
+					</li>
+					<li>
+						<a class="icon_instagram" href="https://instagram.com/lalafadesign" target="_blank">Instagram</a>
+					</li>
+					<li>
+						<a class="icon_facebook" href="https://www.facebook.com/lalafadesign" target="_blank">Facebook</a>
+					</li>	
+				</ul>
+				<ul>
+					<li>Email: info@lalafa.com</li>
+				</ul>
+			</div>
+
+		</div>
+		<!-- Games -->
+		<div id="games" class="container_right pink hidden">
+			<h2>Games</h2>
+			<ul>
+				<!-- Let's Fish -->
+				<li id="letsfish" class="game">
+					<a href="https://letsfish.me" target="_blank">
+						<!-- Talk Bubble Begin -->
+						<div class="talk_bubble">
+							<p class="bubble_txt">Coming soon...</p>
+							<div class="speak"></div>
+						</div>
+						<!-- Talk Bubble End -->
+						<img src="images/game_letsfish_icon.svg" alt="Let's Fish!">
+						<h3>Let's Fish!</h3>
+						<!--
+						<ul class="game_platform">
+							<li class="ios_icon">iOS</li>
+							<li class="android_icon">Android</li>
+						</ul>	
+						-->
+					</a>
+				</li>
+				<!-- FishChain -->
+				<li id="fishchain" class="game">
+					<a href="https://fishchain.io" target="_blank">
+						<img src="images/game_fishchain_icon.svg" alt="FishChain">
+						<h3>FishChain</h3>
+					</a>
+				</li>
+				<!-- Mango Hero -->
+				<li class="game">
+					<a href="#">
+						<img src="images/game_mangohero_icon.png" alt="Mango Hero">
+						<h3>Mango Hero</h3>
+					</a>
+				</li>
+				<!-- Go Bubble Go
+				<li class="game">
+					<a href="#">
+						<img src="images/game_gobubblego_icon.png" alt="Go Bubble Go">
+						<h3>Go Bubble Go</h3>
+					</a>
+				</li> -->
+			</ul>
+		</div>
+		<div id="books" class="container_right orange hidden">
+			<h2>Books and Zines</h2>
+			<nav>
+				<ul>
+					<a href="#">
+						<li>
+							<img src="images/book_cover_YukieAndGirls.png">
+							<h3 class="book_title">Yukie & Girls</h3>
+							<p>Yukie</p>
+						</li>
+					</a>
+					<a href="#">
+						<li>
+							<img src="images/book_cover_Butterfly.png">
+							<h3 class="book_title">Butterfly</h3>
+							<p>Yukie</p>
+						</li>
+					</a>
+				</ul>
+			</nav>
+		</div>
+		<!-- Contact Us -->
+		<div id="gallery" class="container_right green hidden">
+			<h2>Gallery</h2>
+			<nav>
+				<ul>
+					<li>Email: info@lalafa.com</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+	
+	<!-- footer -->
+	<div class="filling"></div>
+	<footer>
+	<!-- SNS -->
+	<div class="sns">
+		<h2>Follow Us</h2>
+		<ul>
+			<li>
+				<a class="icon_twitter" href="https://twitter.com/lalafadesign" target="_blank">Twitter</a>
+			</li>
+			<li>
+				<a class="icon_instagram" href="https://instagram.com/lalafadesign" target="_blank">Instagram</a>
+			</li>
+			<li>
+				<a class="icon_facebook" href="https://www.facebook.com/lalafadesign" target="_blank">Facebook</a>
+			</li>
+		</ul>
+	</div>
+		<!-- 版权声明 -->
+		<div class="copyright">&copy;2020 lalafa.com</div>
+	</footer>
+</body>
